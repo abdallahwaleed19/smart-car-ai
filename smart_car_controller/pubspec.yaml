@@ -1,0 +1,48 @@
+name: smart_car_controller
+description: Smart AI Voice Car Controller - Control your smart car using Arabic and English voice commands powered by AI.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  provider: ^6.1.2
+
+  # Voice Recognition
+  speech_to_text: ^6.6.2
+
+  # HTTP Requests
+  http: ^1.2.1
+
+  # Local Storage
+  shared_preferences: ^2.3.2
+
+  # Animations
+  flutter_animate: ^4.5.0
+  lottie: ^3.1.2
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # Fonts (fetched automatically — no download needed)
+  google_fonts: ^6.2.1
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/animations/
