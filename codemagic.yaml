@@ -12,6 +12,12 @@ workflows:
         - $HOME/Library/Caches/CocoaPods
         - $FLUTTER_ROOT/.pub-cache
     scripts:
+      - name: Generate iOS platform files
+        script: |
+          # Create missing Xcode project, Podfile, AppDelegate etc.
+          flutter create --platforms=ios --org com.smartcarai .
+          # Restore our custom Info.plist (with permissions) from git
+          git checkout ios/Runner/Info.plist
       - name: Get Flutter packages
         script: |
           flutter pub get
@@ -20,7 +26,7 @@ workflows:
           flutter analyze
       - name: Install CocoaPods
         script: |
-          find . -name "Podfile" -execdir pod install \;
+          cd ios && pod install
       - name: Build iOS (unsigned)
         script: |
           flutter build ios --debug --no-codesign
