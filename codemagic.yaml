@@ -1,0 +1,44 @@
+workflows:
+  ios-debug:
+    name: iOS Debug Build
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths:
+        - $HOME/Library/Caches/CocoaPods
+        - $FLUTTER_ROOT/.pub-cache
+    scripts:
+      - name: Set up project path
+        script: |
+          cd smart_car_controller
+      - name: Get Flutter packages
+        script: |
+          cd smart_car_controller
+          flutter pub get
+      - name: Install CocoaPods
+        script: |
+          cd smart_car_controller/ios
+          pod install
+      - name: Build iOS (unsigned)
+        script: |
+          cd smart_car_controller
+          flutter build ios --debug --no-codesign
+      - name: Create IPA
+        script: |
+          cd smart_car_controller
+          mkdir -p build/ios/iphoneos/Payload
+          cp -r "build/ios/iphoneos/Runner.app" build/ios/iphoneos/Payload/Runner.app
+          cd build/ios/iphoneos
+          zip -r SmartCarAI.ipa Payload
+    artifacts:
+      - smart_car_controller/build/ios/iphoneos/SmartCarAI.ipa
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
+        notify:
+          success: true
+          failure: true
