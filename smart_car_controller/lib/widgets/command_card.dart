@@ -22,10 +22,10 @@ class CommandResultCard extends StatelessWidget {
 
     return GlowCard(
       glow: [
-        BoxShadow(color: cmdColor.withOpacity(0.25), blurRadius: 24, spreadRadius: 1),
+        BoxShadow(color: cmdColor.withValues(alpha: 0.25), blurRadius: 24, spreadRadius: 1),
         ...AppTheme.cardShadow,
       ],
-      borderColor: cmdColor.withOpacity(0.3),
+      borderColor: cmdColor.withValues(alpha: 0.3),
       padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,9 +36,9 @@ class CommandResultCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: cmdColor.withOpacity(0.12),
+                  color: cmdColor.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: cmdColor.withOpacity(0.3)),
+                  border: Border.all(color: cmdColor.withValues(alpha: 0.3)),
                 ),
                 child: Text(icon, style: const TextStyle(fontSize: 22)),
               ),
@@ -107,9 +107,9 @@ class CommandResultCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
               decoration: BoxDecoration(
-                color: AppTheme.neonOrange.withOpacity(0.1),
+                color: AppTheme.neonOrange.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: AppTheme.neonOrange.withOpacity(0.3)),
+                border: Border.all(color: AppTheme.neonOrange.withValues(alpha: 0.3)),
               ),
               child: Row(
                 children: [
@@ -171,9 +171,9 @@ class _MiniStat extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: color.withOpacity(0.2)),
+        border: Border.all(color: color.withValues(alpha: 0.2)),
       ),
       child: Column(
         children: [
@@ -196,9 +196,9 @@ class _MqttBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

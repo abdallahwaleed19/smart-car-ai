@@ -158,11 +158,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                             decoration: BoxDecoration(
                               color: (_testSuccess == true ? AppTheme.neonGreen : AppTheme.neonRed)
-                                  .withOpacity(0.1),
+                                  .withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(
                                 color: (_testSuccess == true ? AppTheme.neonGreen : AppTheme.neonRed)
-                                    .withOpacity(0.3),
+                                    .withValues(alpha: 0.3),
                               ),
                             ),
                             child: Row(
@@ -269,7 +269,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Switch.adaptive(
                               value: provider.isDarkMode,
                               onChanged: (_) => provider.toggleTheme(),
-                              activeColor: AppTheme.neonCyan,
+                              activeThumbColor: AppTheme.neonCyan,
+                              activeTrackColor: AppTheme.neonCyan,
                             ),
                           ],
                         ),
@@ -419,9 +420,9 @@ class _ActionButton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 11),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: color.withOpacity(onTap != null ? 0.4 : 0.15)),
+          border: Border.all(color: color.withValues(alpha: onTap != null ? 0.4 : 0.15)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -438,7 +439,7 @@ class _ActionButton extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
-                color: onTap != null ? color : color.withOpacity(0.4),
+                color: onTap != null ? color : color.withValues(alpha: 0.4),
                 fontSize: 10,
                 fontWeight: FontWeight.w700,
                 letterSpacing: 0.8,

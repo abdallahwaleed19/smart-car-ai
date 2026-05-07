@@ -54,20 +54,20 @@ class AppTheme {
 
   // ── Shadows / Glows ───────────────────────────────────────
   static List<BoxShadow> cyanGlow([double intensity = 1.0]) => [
-        BoxShadow(color: neonCyan.withOpacity(0.4 * intensity),  blurRadius: 24 * intensity, spreadRadius: 2 * intensity),
-        BoxShadow(color: neonCyan.withOpacity(0.15 * intensity), blurRadius: 48 * intensity, spreadRadius: 4 * intensity),
+        BoxShadow(color: neonCyan.withValues(alpha: 0.4 * intensity),  blurRadius: 24 * intensity, spreadRadius: 2 * intensity),
+        BoxShadow(color: neonCyan.withValues(alpha: 0.15 * intensity), blurRadius: 48 * intensity, spreadRadius: 4 * intensity),
       ];
 
   static List<BoxShadow> purpleGlow([double intensity = 1.0]) => [
-        BoxShadow(color: neonPurple.withOpacity(0.4 * intensity), blurRadius: 24 * intensity, spreadRadius: 2 * intensity),
+        BoxShadow(color: neonPurple.withValues(alpha: 0.4 * intensity), blurRadius: 24 * intensity, spreadRadius: 2 * intensity),
       ];
 
   static List<BoxShadow> redGlow([double intensity = 1.0]) => [
-        BoxShadow(color: neonRed.withOpacity(0.4 * intensity), blurRadius: 24 * intensity, spreadRadius: 2 * intensity),
+        BoxShadow(color: neonRed.withValues(alpha: 0.4 * intensity), blurRadius: 24 * intensity, spreadRadius: 2 * intensity),
       ];
 
   static List<BoxShadow> cardShadow = [
-    BoxShadow(color: Colors.black.withOpacity(0.4), blurRadius: 16, offset: const Offset(0, 4)),
+    BoxShadow(color: Colors.black.withValues(alpha: 0.4), blurRadius: 16, offset: const Offset(0, 4)),
   ];
 
   // ── Dark ThemeData ────────────────────────────────────────
@@ -160,7 +160,7 @@ class AppTheme {
             (s) => s.contains(WidgetState.selected) ? neonCyan : textMuted),
         trackColor: WidgetStateProperty.resolveWith(
             (s) => s.contains(WidgetState.selected)
-                ? neonCyan.withOpacity(0.3)
+                ? neonCyan.withValues(alpha: 0.3)
                 : darkBorder),
       ),
     );

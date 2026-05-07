@@ -67,9 +67,11 @@ class VoiceService {
       localeId: _currentLocale,
       listenFor: const Duration(seconds: 30),
       pauseFor: Duration(seconds: AppConstants.voiceSilenceSec),
-      partialResults: true,
-      cancelOnError: true,
-      listenMode: ListenMode.confirmation,
+      listenOptions: SpeechListenOptions(
+        partialResults: true,
+        cancelOnError: true,
+        listenMode: ListenMode.confirmation,
+      ),
     );
 
     return true;

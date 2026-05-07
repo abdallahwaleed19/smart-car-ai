@@ -88,7 +88,7 @@ class _MicButtonState extends State<MicButton>
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: AppTheme.neonCyan.withOpacity(0.3),
+                      color: AppTheme.neonCyan.withValues(alpha: 0.3),
                       width: 1.5,
                     ),
                   ),
@@ -110,7 +110,7 @@ class _MicButtonState extends State<MicButton>
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: AppTheme.neonCyan.withOpacity(0.25),
+                      color: AppTheme.neonCyan.withValues(alpha: 0.25),
                       width: 1,
                     ),
                   ),

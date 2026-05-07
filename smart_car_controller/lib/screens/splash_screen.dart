@@ -82,12 +82,12 @@ class _SplashScreenState extends State<SplashScreen>
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.neonCyan.withOpacity(0.35 * _glowAnim.value),
+                            color: AppTheme.neonCyan.withValues(alpha: 0.35 * _glowAnim.value),
                             blurRadius: 60,
                             spreadRadius: 20,
                           ),
                           BoxShadow(
-                            color: AppTheme.neonBlue.withOpacity(0.2 * _glowAnim.value),
+                            color: AppTheme.neonBlue.withValues(alpha: 0.2 * _glowAnim.value),
                             blurRadius: 100,
                             spreadRadius: 30,
                           ),
@@ -104,7 +104,7 @@ class _SplashScreenState extends State<SplashScreen>
                           colors: [Color(0xFF0A2040), Color(0xFF030B1A)],
                         ),
                         border: Border.all(
-                          color: AppTheme.neonCyan.withOpacity(0.5),
+                          color: AppTheme.neonCyan.withValues(alpha: 0.5),
                           width: 1.5,
                         ),
                       ),
@@ -241,7 +241,7 @@ class _GridPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = AppTheme.neonCyan.withOpacity(0.04)
+      ..color = AppTheme.neonCyan.withValues(alpha: 0.04)
       ..strokeWidth = 1;
 
     const step = 40.0;
@@ -269,9 +269,9 @@ class _TechBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: AppTheme.neonCyan.withOpacity(0.07),
+        color: AppTheme.neonCyan.withValues(alpha: 0.07),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppTheme.neonCyan.withOpacity(0.2)),
+        border: Border.all(color: AppTheme.neonCyan.withValues(alpha: 0.2)),
       ),
       child: Text(
         label,

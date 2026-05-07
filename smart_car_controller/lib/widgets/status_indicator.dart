@@ -21,9 +21,9 @@ class ConnectionBadge extends StatelessWidget {
       duration: const Duration(milliseconds: 400),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
       decoration: BoxDecoration(
-        color: config.color.withOpacity(0.12),
+        color: config.color.withValues(alpha: 0.12),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: config.color.withOpacity(0.4), width: 1),
+        border: Border.all(color: config.color.withValues(alpha: 0.4), width: 1),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -82,7 +82,7 @@ class _StatusDot extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
-        boxShadow: [BoxShadow(color: color.withOpacity(0.5), blurRadius: 6)],
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 6)],
       ),
     );
 

@@ -103,17 +103,17 @@ class _DpadButtonState extends State<_DpadButton> {
         height: 72,
         decoration: BoxDecoration(
           color: _pressed
-              ? widget.color.withOpacity(0.25)
-              : widget.color.withOpacity(0.08),
+              ? widget.color.withValues(alpha: 0.25)
+              : widget.color.withValues(alpha: 0.08),
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
             color: _pressed
                 ? widget.color
-                : widget.color.withOpacity(0.3),
+                : widget.color.withValues(alpha: 0.3),
             width: _pressed ? 1.5 : 1,
           ),
           boxShadow: _pressed
-              ? [BoxShadow(color: widget.color.withOpacity(0.4), blurRadius: 16)]
+              ? [BoxShadow(color: widget.color.withValues(alpha: 0.4), blurRadius: 16)]
               : [],
         ),
         child: Column(
@@ -162,15 +162,15 @@ class _StopButtonState extends State<_StopButton> {
         height: 72,
         decoration: BoxDecoration(
           color: _pressed
-              ? AppTheme.neonRed.withOpacity(0.3)
-              : AppTheme.neonRed.withOpacity(0.1),
+              ? AppTheme.neonRed.withValues(alpha: 0.3)
+              : AppTheme.neonRed.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
-            color: _pressed ? AppTheme.neonRed : AppTheme.neonRed.withOpacity(0.4),
+            color: _pressed ? AppTheme.neonRed : AppTheme.neonRed.withValues(alpha: 0.4),
             width: _pressed ? 1.5 : 1,
           ),
           boxShadow: _pressed
-              ? [BoxShadow(color: AppTheme.neonRed.withOpacity(0.5), blurRadius: 20)]
+              ? [BoxShadow(color: AppTheme.neonRed.withValues(alpha: 0.5), blurRadius: 20)]
               : [],
         ),
         child: const Column(

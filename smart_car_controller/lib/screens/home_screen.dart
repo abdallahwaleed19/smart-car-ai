@@ -212,9 +212,9 @@ class _SmallBadge extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 4),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.08),
+        color: color.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: color.withOpacity(0.25)),
+        border: Border.all(color: color.withValues(alpha: 0.25)),
       ),
       child: Text(label,
           style: TextStyle(color: color, fontSize: 9, fontWeight: FontWeight.w600, letterSpacing: 0.5)),
@@ -258,10 +258,10 @@ class _TabBar extends StatelessWidget {
                   duration: const Duration(milliseconds: 200),
                   padding: const EdgeInsets.symmetric(vertical: 9),
                   decoration: BoxDecoration(
-                    color: isSelected ? AppTheme.neonCyan.withOpacity(0.12) : Colors.transparent,
+                    color: isSelected ? AppTheme.neonCyan.withValues(alpha: 0.12) : Colors.transparent,
                     borderRadius: BorderRadius.circular(10),
                     border: isSelected
-                        ? Border.all(color: AppTheme.neonCyan.withOpacity(0.3))
+                        ? Border.all(color: AppTheme.neonCyan.withValues(alpha: 0.3))
                         : null,
                   ),
                   child: Row(
@@ -383,7 +383,7 @@ class _VoiceTextDisplay extends StatelessWidget {
 
     if (provider.isListening && provider.partialText.isNotEmpty) {
       text = provider.partialText;
-      color = AppTheme.neonCyan.withOpacity(0.7);
+      color = AppTheme.neonCyan.withValues(alpha: 0.7);
     } else if (provider.recognizedText.isNotEmpty) {
       text = provider.recognizedText;
       color = AppTheme.textPrimary;
@@ -462,9 +462,9 @@ class _LangChip extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
-          color: selected ? AppTheme.neonCyan.withOpacity(0.12) : Colors.transparent,
+          color: selected ? AppTheme.neonCyan.withValues(alpha: 0.12) : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
-          border: selected ? Border.all(color: AppTheme.neonCyan.withOpacity(0.4)) : null,
+          border: selected ? Border.all(color: AppTheme.neonCyan.withValues(alpha: 0.4)) : null,
         ),
         child: Row(
           children: [
@@ -497,7 +497,7 @@ class _ManualTab extends StatelessWidget {
         children: [
           GlowCard(
             glow: AppTheme.cyanGlow(0.3),
-            borderColor: AppTheme.neonCyan.withOpacity(0.2),
+            borderColor: AppTheme.neonCyan.withValues(alpha: 0.2),
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
@@ -617,9 +617,9 @@ class _HistoryTab extends StatelessWidget {
                         width: 36,
                         height: 36,
                         decoration: BoxDecoration(
-                          color: cmdColor.withOpacity(0.1),
+                          color: cmdColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: cmdColor.withOpacity(0.3)),
+                          border: Border.all(color: cmdColor.withValues(alpha: 0.3)),
                         ),
                         child: Center(
                           child: Text(
